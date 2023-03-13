@@ -49,7 +49,7 @@ def vista_formulario_empleado(request):
         print(formulario)
         if formulario.is_valid():
             form_data=formulario.cleaned_data
-            empleado = modelo_empleado(empleado_nombre=form_data['empleado_nombre'],empleado_apellido=form_data['empleado_apellido'],empleado_legajo=form_data['empleado_legajo'])
+            empleado = modelo_empleado(empleado_nombre=form_data['empleado_nombre'],empleado_apellido=form_data['empleado_apellido'],empleado_area=form_data['empleado_area'])
             empleado.save()
             return render(request,'inicio.html')
         else:
