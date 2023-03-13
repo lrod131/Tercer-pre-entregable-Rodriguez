@@ -3,12 +3,12 @@ from hotelApp import views
 
 urlpatterns = [
     path('vista_inicio/',views.inicio),
-    path('vista_renderHTML-_clientes/', views.clientes, name="cliente"),
-    path('vista_render_habitacion/', views.habitacion, name="habitacion"),
-    path('vista_render_empleados/', views.empleado, name="empleado"),
-    path('vista_cliente/', views.formulario_cliente, name="Formulario_cliente"),
-    path('vista_habitacion/', views.formulario_habitacion, name="Formulario_habitacion"),
-    path('vista_empleado/', views.formulario_empleado, name="Formulario_empleado"),
-    path('vlista_busqueda_cliente/', views.busqueda_cliente, name="Busqueda_cliente"),
-    path('vistabuscar/',views.buscar),
+    path('clientes/', views.vista_renderHTML_cliente, name="cliente"),
+    path('habitaciones/', views.vista_renderHTML_habitacion, name="habitacion"),
+    path('empleados/', views.vista_renderHTML_empleado, name="empleado"),
+    path('buscar_clientes/', views.vista_busquedaHTML_cliente, name="Busqueda_cliente"),
+    path('buscar/',views.vista_buscarHTML),
+    path('formulario_cliente/', views.vista_formulario_cliente, name="formulario_cliente"),
+    path('formulario_habitacion/', views.vista_formulario_habitacion, name="formulario_habitacion"),
+    path('formulario_empleado/', views.vista_formulario_empleado, name="formulario_empleado"),
 ]

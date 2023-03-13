@@ -4,6 +4,9 @@ from .models import modelo_cliente,modelo_empleado,modelo_habitacion
 from .forms import formulario_cliente,formulario_empleado,formulario_habitacion
 
 # Create your views here.
+def inicio(request):
+    return render(request, 'inicio.html')
+
 def vista_renderHTML_cliente(request):
     return render(request, 'clientes.html')
 
@@ -23,7 +26,7 @@ def vista_buscarHTML(request):
         context={'clientes':clientes}
         return render(request,'resultado.html',context)
     else:
-        return HttpResponse("No se encontró ningun cliente con esos datos")
+        return HttpResponse("No se encontró ningún cliente con esos datos")
 
 def vista_formulario_cliente(request):
     if request.method=='POST':
