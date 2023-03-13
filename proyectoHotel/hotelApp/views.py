@@ -7,8 +7,8 @@ from .forms import formulario_cliente,formulario_empleado,formulario_habitacion
 def inicio(request):
     return render(request, 'inicio.html')
 
-def vista_renderHTML_cliente(request):
-    return render(request, 'clientes.html')
+def cliente(request): 
+ return render(request,'cliente.html')
 
 def vista_renderHTML_habitacion(request):
     return render(request, 'habitaciones.html')
