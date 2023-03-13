@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Reserva</title>
+</head>
+<body>
+    {% extends 'baseline.html' %}
+    {% load static %}
+    {% block contenido_variable_hijos %}
+    <h1>Hotel coding house</h1></a>
+    <br>
+        <form action="vista_formulario_habitacion" method="POST">{% csrf_token %}
+            <p>Tipo de habitacion: <input type="text" name="habitacion_tipo"> </p>
+            <p>Fecha de reserva: <input type="date" name="fecha_reserva"></p>
+            <p>Numero de habitacion: <input type="number" name="habitacion_numero"></p>
+            <input type="submit" value="Enviar">
+        </form>
+    {% endblock %}
+</body>
+</html>

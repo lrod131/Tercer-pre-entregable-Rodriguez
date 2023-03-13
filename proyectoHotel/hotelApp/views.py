@@ -16,15 +16,15 @@ def vista_renderHTML_habitacion(request):
 def vista_renderHTML_empleado(request):
     return render(request, 'empleados.html')
 
-def vista_busquedaHTML_cliente(request):
-    return render(request, 'busquedaPaciente.html')
+def vista_renderHTML_buscar_cliente(request):
+    return render(request, 'buscar_cliente.html')
 
-def vista_buscarHTML(request):
+def vista_resultado_busqueda(request):
     if request.GET['nombre']:
         cliente_nombre=request.GET['cliente_nombre']
-        clientes= modelo_cliente.objects.filter(cliente_nombre__icontains=cliente_nombre)
-        context={'clientes':clientes}
-        return render(request,'resultado.html',context)
+        clientes = modelo_cliente.objects.filter(cliente_nombre__icontains=cliente_nombre)
+        context ={'clientes':clientes}
+        return render(request,'resultado_busqueda_clientes.html',context)
     else:
         return HttpResponse("No se encontró ningún cliente con esos datos")
 
@@ -39,7 +39,7 @@ def vista_formulario_cliente(request):
             return render(request,'inicio.html')
         else:
             formulario=formulario_habitacion()
-    return render(request, "formulario_cliente.html")
+    return render(request, "front_formulario_cliente.html")
 
 def vista_formulario_empleado(request):
     if request.method=='POST':
@@ -52,7 +52,7 @@ def vista_formulario_empleado(request):
             return render(request,'inicio.html')
         else:
             formulario=formulario_habitacion()
-    return render(request, "formularioDoctor.html")
+    return render(request, "front_formulario_empleado.html")
 
 def vista_formulario_habitacion(request):
     if request.method=='POST':
@@ -65,4 +65,4 @@ def vista_formulario_habitacion(request):
             return render(request,'inicio.html')
         else:
             formulario=formulario_habitacion()
-    return render(request, "formularioTurno.html",)
+    return render(request, "front_formulario_habitacion.html",)

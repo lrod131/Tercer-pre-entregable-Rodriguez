@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=>, initial-scale=1.0">
+    <title>Buscar clientes</title>
+</head>
+<body>
+    {% extends 'baseline.html' %}
+    {% load static %}
+    {% block contenido_variable_hijos %}
+    <h1>Hotel coding house</h1></a>
+    <br>
+    <h3>Ingrese Nombre del cliente: </h3>
+        <form action="buscar" methode="GET">
+            <input type="text" name="cliente_nombre" id="cliente_nombre">
+            <input type="submit" value="buscar">
+        </form>
+        {% endblock %}
+</body>
+</html>
