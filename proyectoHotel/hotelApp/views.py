@@ -29,6 +29,7 @@ def vista_resultado_busqueda(request):
         return HttpResponse("No se encontró ningún cliente con esos datos")
 
 def vista_formulario_cliente(request):
+    formulario = formulario_cliente()
     if request.method=='POST':
         formulario = formulario_cliente(request.POST)
         print(formulario)
@@ -39,9 +40,10 @@ def vista_formulario_cliente(request):
             return render(request,'inicio.html')
         else:
             formulario=formulario_habitacion()
-    return render(request, "front_formulario_cliente.html")
+    return render(request, "front_formulario_cliente.html",{"formulario":formulario})
 
 def vista_formulario_empleado(request):
+    formulario = formulario_empleado()
     if request.method=='POST':
         formulario=formulario_empleado(request.POST)
         print(formulario)
@@ -52,17 +54,19 @@ def vista_formulario_empleado(request):
             return render(request,'inicio.html')
         else:
             formulario=formulario_habitacion()
-    return render(request, "front_formulario_empleado.html")
+    return render(request, "front_formulario_empleado.html",{"formulario":formulario})
 
 def vista_formulario_habitacion(request):
+    miFormulario = formulario_habitacion()
     if request.method=='POST':
-        formulario=formulario_habitacion(request.POST)
-        print(formulario)
-        if formulario.is_valid():
-            form_data=formulario.cleaned_data
+        miFormulario = formulario_habitacion(request.POST)
+        print(miFormulario)
+        if miFormulario.is_valid():
+            form_data=miFormulario.cleaned_data
             habitacion = modelo_habitacion(habitacion_tipo=form_data['habitacion_tipo'],fecha_reserva=form_data['fecha_reserva'],habitacion_numero=form_data['habitacion_numero'])
             habitacion.save()
             return render(request,'inicio.html')
         else:
-            formulario=formulario_habitacion()
-    return render(request, "front_formulario_habitacion.html",)
+            miFormulario=formulario_habitacion()
+    return render(request, "front_formulario_habitacion.html",{"miFormulario":miFormulario} )
+

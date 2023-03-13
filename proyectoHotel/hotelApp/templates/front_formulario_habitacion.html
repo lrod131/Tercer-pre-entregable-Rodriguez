@@ -12,10 +12,10 @@
     {% block contenido_variable_hijos %}
     <h1>Hotel coding house</h1></a>
     <br>
-        <form action="vista_formulario_habitacion" method="POST">{% csrf_token %}
-            <p>Tipo de habitacion: <input type="text" name="habitacion_tipo"> </p>
-            <p>Fecha de reserva: <input type="date" name="fecha_reserva"></p>
-            <p>Numero de habitacion: <input type="number" name="habitacion_numero"></p>
+        <form action="front_formulario_habitacion.html" method="POST">{% csrf_token %}
+            <table>
+                {{miFormulario.as_table}}
+            </table>
             <input type="submit" value="Enviar">
         </form>
     {% endblock %}

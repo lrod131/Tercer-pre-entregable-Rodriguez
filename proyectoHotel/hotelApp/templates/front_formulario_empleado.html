@@ -13,10 +13,10 @@
     <h1>Hotel coding house</h1></a>
     <br>
         <form action="vista_formulario_empleado" method="POST">{% csrf_token %}
-            <p>Nombre: <input type="text" name="empleado_nombre"> </p>
-            <p>Apellido: <input type="text" name="empleado_apellido"></p>
-            <p>Legajo: <input type="text" name="empleado_legajo"></p>
-            <input type="submit" value="Enviar">
+            <table>
+                {{formulario.as_table}}
+                <input type="submit" value="Enviar">
+            </table>
         </form>
     {% endblock %}
 </body>
