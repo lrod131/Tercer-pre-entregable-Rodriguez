@@ -31,7 +31,7 @@ python manage.py migrate
 7.-Iniciar la aplicación:
 python manage.py runserver
 
-8.-Acceder a la aplicación en el navegador, en la dirección http://localhost:8000/.
+8.-Acceder a la aplicación en el navegador, en la dirección http://localhost:8000/hotelApp
 
 ##Cómo utilizar la aplicación
 La aplicación tiene las siguientes funcionalidades:
