@@ -10,10 +10,10 @@
     {% extends 'baseline.html' %}
     {% load static %}
     {% block contenido_variable_hijos %}
-    <h1>Hotel coding house</h1></a>
+    <h1>Django-Hotel</h1></a>
     <br>
     <h3>Ingrese Nombre del cliente: </h3>
-        <form action="buscar" methode="GET">
+        <form action="resultado_busqueda_clientes" methode="GET">
             <input type="text" name="cliente_nombre" id="cliente_nombre">
             <input type="submit" value="buscar">
         </form>

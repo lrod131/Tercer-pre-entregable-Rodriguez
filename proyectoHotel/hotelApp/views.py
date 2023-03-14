@@ -20,10 +20,10 @@ def vista_renderHTML_buscar_cliente(request):
     return render(request, 'buscar_cliente.html')
 
 def vista_resultado_busqueda(request):
-    if request.GET['nombre']:
+    if request.GET['cliente_nombre']:
         cliente_nombre=request.GET['cliente_nombre']
         clientes = modelo_cliente.objects.filter(cliente_nombre__icontains=cliente_nombre)
-        context ={'clientes':clientes}
+        context ={'clientes':clientes,'cliente_nombre':cliente_nombre}
         return render(request,'resultado_busqueda_clientes.html',context)
     else:
         return HttpResponse("No se encontró ningún cliente con esos datos")
